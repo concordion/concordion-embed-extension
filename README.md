@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/concordion/concordion.svg?branch=master)](https://travis-ci.org/concordion/concordion)
+
 This [Concordion](http://www.concordion.org) extension adds an `embed` command that embeds HTML in the Concordion output. It is similar to the [echo command](http://www.concordion.org/dist/1.4.4/spec/concordion/command/echo/Echo.html), except that it does not escape HTML text.
 
 The [demo project](http://github.com/concordion/concordion-embed-extension-demo) demonstrates this extension.
