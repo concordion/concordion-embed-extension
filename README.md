@@ -1,8 +1,8 @@
 This [Concordion](http://www.concordion.org) extension adds an `embed` command that embeds HTML in the Concordion output. It is similar to the [echo command](http://www.concordion.org/dist/1.4.4/spec/concordion/command/echo/Echo.html), except that it does not escape HTML text.
 
-The [demo project](http://github.com/concordion//concordion-embed-extension-demo) demonstrates this extension.
+The [demo project](http://github.com/concordion/concordion-embed-extension-demo) demonstrates this extension.
 
-# Introduction
+# Installation
 
 To install the extension with no namespace declarations, either annotate the fixture class with:
 
@@ -11,6 +11,19 @@ To install the extension with no namespace declarations, either annotate the fix
 ```
 
 or set the system property `concordion.extensions` to `org.concordion.ext.EmbedExtension`
+
+# Usage
+
+To use the `embed` command, add an attribute named `embed` using the namespace `"urn:concordion-extensions:2010"` to an element in your Concordion HTML. For example:
+
+```html
+    <html xmlns:concordion="http://www.concordion.org/2007/concordion"
+        xmlns:ext="urn:concordion-extensions:2010">
+
+    ....
+    <span ext:embed="methodThatReturnsHtml()"/>
+    ...
+```  
 
 ## Declaring additional namespaces
 
@@ -23,17 +36,6 @@ For example, to map the `myns` prefix to the `http://com.myco/myns` namespace:
         public ConcordionExtension extension =
             new EmbedExtension().withNamespace("myns", "http://com.myco/myns");
 ```
-
-To use the `embed` command, add an attribute named `embed` using the namespace `"urn:concordion-extensions:2010"` to an element in your Concordion HTML. For example:
-
-```html
-    <html xmlns:concordion="http://www.concordion.org/2007/concordion"
-        xmlns:ext="urn:concordion-extensions:2010">
-
-    ....
-    <span ext:embed="methodThatReturnsHtml()"/>
-    ...
-```  
 
 # Further info
 

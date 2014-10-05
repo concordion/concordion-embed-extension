@@ -22,7 +22,6 @@ import org.concordion.api.Element;
 import org.concordion.api.Evaluator;
 import org.concordion.api.ResultRecorder;
 import org.concordion.internal.XMLParser;
-import org.concordion.internal.command.EchoCommand;
 import org.concordion.internal.util.Check;
 
 /**
@@ -33,8 +32,8 @@ import org.concordion.internal.util.Check;
  * is executed for an element, it creates a wrapper element that contains the namespace declarations around
  * the element that the command is being executed for.
  *
- * @see {@link EmbedExtension) for details of configuring and using this command
- * @see The {@link EchoCommand} is similar, except that it adds text rather than HTML to the output.
+ * @see org.concordion.ext.EmbedExtension for details of configuring and using this command
+ * @see org.concordion.internal.command.EchoCommand is similar, except that it adds text rather than HTML to the output.
  */
 public class EmbedCommand extends AbstractCommand {
 
