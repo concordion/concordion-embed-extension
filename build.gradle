@@ -1,4 +1,9 @@
 apply from: 'https://raw.githubusercontent.com/concordion/concordion-extension-build/master/extension-build.gradle'
+apply plugin: 'wrapper'
+
+wrapper {
+    gradleVersion = "2.2"
+}
 
 description = 'An extension to Concordion that adds an `embed` command to embed HTML in the Concordion output'
 
@@ -11,18 +16,18 @@ ext {
             url 'http://gplus.to/NigelCharman'
         }
     }
-    inceptionYear = '2011'   
+    inceptionYear = '2011'
 }
 
 githubPages {
     repoUri = 'git@github.com:concordion/concordion-embed-extension.git'
     pages {
         from 'docs'
-        
+
         from ('build/reports/spec/spec/concordion/ext/embed/') {
             into 'spec'
         }
-        
+
         from ('build/docs/javadoc/') {
             into 'api'
         }
