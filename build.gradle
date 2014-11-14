@@ -1,11 +1,6 @@
 apply from: 'https://raw.githubusercontent.com/concordion/concordion-extension-build/master/extension-build.gradle'
-apply plugin: 'wrapper'
 
 description = 'An extension to Concordion that adds an `embed` command to embed HTML in the Concordion output'
-
-wrapper {
-    gradleVersion = "2.2"
-}
 
 ext {
     developers = {
