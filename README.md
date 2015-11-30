@@ -1,4 +1,7 @@
 [![Build Status](https://travis-ci.org/concordion/concordion-embed-extension.svg?branch=master)](https://travis-ci.org/concordion/concordion-embed-extension)
+[![Maven Central](https://img.shields.io/maven-central/v/org.concordion/concordion-embed-extension.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.concordion%22%20AND%20a%3A%22concordion-embed-extension%22)
+[![Apache License 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+
 
 This [Concordion](http://www.concordion.org) extension adds an `embed` command that embeds HTML in the Concordion output. It is similar to the [echo command](http://www.concordion.org/dist/1.4.4/spec/concordion/command/echo/Echo.html), except that it does not escape HTML text.
 
