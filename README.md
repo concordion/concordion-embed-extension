@@ -18,7 +18,9 @@ To add the extension with no namespace declarations, either annotate the fixture
 
 or set the system property `concordion.extensions` to `org.concordion.ext.EmbedExtension`
 
-To use the `embed` command, add an attribute named `embed` using the namespace `"urn:concordion-extensions:2010"` to an element in your Concordion HTML. For example:
+## HTML
+
+For HTML format specifications, to use the `embed` command, add an attribute named `embed` using the namespace `"urn:concordion-extensions:2010"` to an element. For example:
 
 ```html
     <html xmlns:concordion="http://www.concordion.org/2007/concordion"
@@ -28,6 +30,20 @@ To use the `embed` command, add an attribute named `embed` using the namespace `
     <span ext:embed="methodThatReturnsHtml()"/>
     ...
 ```  
+
+## Markdown
+
+For Markdown format specifications, you need to declare the `ext` namespace in the Concordion fixture:
+
+``` java
+@ConcordionOptions(declareNamespaces={"ext", "urn:concordion-extensions:2010"})
+```
+
+The `embed` command can then be used within the Markdown spec, eg:
+
+```markdown
+[-](- "ext:embed=getDetails()")
+```
 
 ## Declaring additional namespaces
 
