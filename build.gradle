@@ -14,9 +14,9 @@ ext {
     inceptionYear = '2011'
 }
 
-githubPages {
+gitPublish {
     repoUri = 'git@github.com:concordion/concordion-embed-extension.git'
-    pages {
+    contents {
         from 'docs'
 
         from ('build/reports/spec/spec/concordion/ext/embed/') {
