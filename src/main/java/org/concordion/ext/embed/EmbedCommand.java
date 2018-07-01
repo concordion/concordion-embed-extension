@@ -16,18 +16,14 @@ package org.concordion.ext.embed;
 
 import nu.xom.Document;
 
-import org.concordion.api.AbstractCommand;
-import org.concordion.api.CommandCall;
-import org.concordion.api.Element;
-import org.concordion.api.Evaluator;
-import org.concordion.api.ResultRecorder;
+import org.concordion.api.*;
 import org.concordion.internal.XMLParser;
 import org.concordion.internal.util.Check;
 
 /**
  * Embeds HTML fragments in the Concordion output.
  * <p>
- * When embedding HTML, it is often necessary to add namespace declarations to the Concordion output.  
+ * When embedding HTML, it is often necessary to add namespace declarations to the Concordion output.
  * The {@link #withNamespace(String, String)} method registers a namespace declaration. When the embed command
  * is executed for an element, it creates a wrapper element that contains the namespace declarations around
  * the element that the command is being executed for.
@@ -38,10 +34,10 @@ import org.concordion.internal.util.Check;
 public class EmbedCommand extends AbstractCommand {
 
     private String namespaceDeclaration = "";
-    
+
     /**
      * Registers a namespace declaration.
-     * 
+     *
      * @param prefix the prefix to use for the namespace
      * @param namespace the namespace
      */
@@ -59,9 +55,9 @@ public class EmbedCommand extends AbstractCommand {
     }
 
     @Override
-    public void verify(CommandCall commandCall, Evaluator evaluator, ResultRecorder resultRecorder) {
+    public void verify(CommandCall commandCall, Evaluator evaluator, ResultRecorder resultRecorder, Fixture fixture) {
         Check.isFalse(commandCall.hasChildCommands(), "Nesting commands inside an 'embed' is not supported");
-        
+
         Object result = evaluator.evaluate(commandCall.getExpression());
 
         Element element = commandCall.getElement();
@@ -74,7 +70,7 @@ public class EmbedCommand extends AbstractCommand {
             element.appendChild(child);
         }
     }
-    
+
     private Document getXOMDocument(String xml) {
         try {
             return XMLParser.parse(String.format("<wrapper %s>%s</wrapper>", namespaceDeclaration, xml));
