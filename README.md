@@ -6,7 +6,7 @@
 This [Concordion](http://www.concordion.org) extension adds an `embed` command that embeds HTML in the Concordion output. It is similar to the [echo command](http://www.concordion.org/dist/1.4.4/spec/concordion/command/echo/Echo.html), except that it does not escape HTML text.
 
 # Installation
-The extension is available from [Maven Central](http://search.maven.org/#artifactdetails%7Corg.concordion%7Cconcordion-embed-extension%7C1.1.2%7Cjar).</a>
+The extension is available from [Maven Central](http://search.maven.org/#artifactdetails%7Corg.concordion%7Cconcordion-embed-extension%7C1.2.0%7Cjar).</a>
 
 # Usage
 
